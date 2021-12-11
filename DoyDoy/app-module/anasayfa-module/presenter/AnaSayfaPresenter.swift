@@ -13,13 +13,13 @@ class AnaSayfaPresenter : ViewToPresenterAnasayfaProtocol{
     var anasayfaView: PresenterToViewAnasayfaProtocol?
     
     func yemekleriYukle() {
-        
+        anasayfaInteractor?.tumYemekleriYukle()
     }
 }
 
 extension AnaSayfaPresenter : InteractorToPresenterAnasayfaProtocol {
     func presenteraVeriGonder(yemeklerListesi: Array<Yemek>) {
-        
+        anasayfaView?.vieweVeriGonder(yemeklerListesi: yemeklerListesi)
     }
 }
        

@@ -17,13 +17,16 @@ class IntroVC: UIViewController {
         setBackground(name: "bg")
         
         contentBg.setBlurBackground()
-        contentBg.addBottomRoundedEdge(desiredCurve: 1.5)
+        contentBg.addTopRoundedEdge(desiredCurve: 1.5)
     }
 
+    @IBAction func goToAnaSayfa(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToAnaSayfa", sender: nil)
+    }
 }
 
 extension UIView {
-    func addBottomRoundedEdge(desiredCurve: CGFloat?) {
+    func addTopRoundedEdge(desiredCurve: CGFloat?) {
         let offset: CGFloat = self.frame.width / desiredCurve!
         let bounds: CGRect = self.bounds
 
@@ -56,6 +59,35 @@ extension UIView {
         } else {
             self.backgroundColor = .black
         }
+    }
+    func dropShadow(scale: Bool = true) {
+        layer.masksToBounds = true
+        layer.shadowColor = UIColor.lightGray.cgColor
+        layer.shadowOpacity = 0.8
+        layer.shadowOffset = CGSize(width: 0, height: 5)
+        layer.shadowRadius = 2
+        layer.borderWidth = 1
+        layer.shouldRasterize = true
+        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+        layer.borderColor =  UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
+        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: 5).cgPath
+    }
+
+    func addBottomRoundedEdge() {
+        let offset: CGFloat = (self.frame.width * 0.8)
+        let bounds: CGRect = self.bounds
+
+        let rectBounds: CGRect = CGRect(x: bounds.origin.x, y: bounds.origin.y, width: bounds.size.width , height: bounds.size.height / 2)
+        let rectPath: UIBezierPath = UIBezierPath(rect: rectBounds)
+        let ovalBounds: CGRect = CGRect(x: bounds.origin.x - offset / 2, y: bounds.origin.y, width: bounds.size.width + offset , height: bounds.size.height)
+        let ovalPath: UIBezierPath = UIBezierPath(ovalIn: ovalBounds)
+        rectPath.append(ovalPath)
+
+        let maskLayer: CAShapeLayer = CAShapeLayer()
+        maskLayer.frame = bounds
+        maskLayer.path = rectPath.cgPath
+
+        self.layer.mask = maskLayer
     }
 }
 

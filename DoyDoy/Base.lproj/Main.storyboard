@@ -169,7 +169,7 @@
                     <navigationItem key="navigationItem" title="DoyDoy Yemekler" id="7TB-I7-cih"/>
                     <connections>
                         <outlet property="yemeklerCV" destination="Euj-JW-BVE" id="c8j-5P-kFK"/>
-                        <segue destination="Vxf-gr-Hpv" kind="show" identifier="goToDetay" id="EKT-UP-qSY"/>
+                        <segue destination="Vxf-gr-Hpv" kind="showDetail" identifier="goToDetay" id="VFX-z2-Pqv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -181,30 +181,30 @@
             <objects>
                 <viewController id="Vxf-gr-Hpv" customClass="DetayVC" customModule="DoyDoy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NLT-Gq-oXc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oj3-5Q-SRx">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="350" id="Nzo-ih-VII"/>
+                                    <constraint firstAttribute="height" constant="250" id="Nzo-ih-VII"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9cP-Ze-HaV">
-                                <rect key="frame" x="20" y="188" width="374" height="300"/>
+                                <rect key="frame" x="20" y="100" width="374" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="zT7-Bb-WpI"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYP-Le-3eN">
-                                <rect key="frame" x="170.5" y="533" width="73.5" height="48"/>
+                                <rect key="frame" x="170.5" y="445" width="73.5" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RmE-OM-xsx">
-                                <rect key="frame" x="112.5" y="784" width="189.5" height="48"/>
+                                <rect key="frame" x="112.5" y="730" width="189.5" height="48"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" cornerRadius="48">
@@ -226,13 +226,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maliyet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OzA-zG-O7l">
-                                <rect key="frame" x="173.5" y="617" width="67" height="24"/>
+                                <rect key="frame" x="173.5" y="529" width="67" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" red="0.082352941176470587" green="0.70196078431372544" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="VtF-2q-yaO">
-                                <rect key="frame" x="160" y="665" width="94" height="32"/>
+                                <rect key="frame" x="160" y="577" width="94" height="32"/>
                                 <connections>
                                     <action selector="stepperKontrol:" destination="Vxf-gr-Hpv" eventType="valueChanged" id="TqO-0A-1hb"/>
                                 </connections>

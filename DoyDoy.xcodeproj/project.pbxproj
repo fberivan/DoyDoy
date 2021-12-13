@@ -27,6 +27,10 @@
 		D39625982761364600C784C1 /* YemeklerCevap.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39625972761364600C784C1 /* YemeklerCevap.swift */; };
 		D3C6CCDF2764DB0B0020AC7A /* YemekCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6CCDE2764DB0B0020AC7A /* YemekCollectionViewCell.swift */; };
 		D3C6CCEA276515040020AC7A /* DetayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6CCE9276515040020AC7A /* DetayVC.swift */; };
+		D3E20E862767C1C000D7EC03 /* DetayProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E20E852767C1C000D7EC03 /* DetayProtocols.swift */; };
+		D3E20E882767C6E900D7EC03 /* DetayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E20E872767C6E900D7EC03 /* DetayPresenter.swift */; };
+		D3E20E8A2767C73500D7EC03 /* DetayInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E20E892767C73500D7EC03 /* DetayInteractor.swift */; };
+		D3E20E8C2767C74D00D7EC03 /* DetayRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E20E8B2767C74D00D7EC03 /* DetayRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,10 @@
 		D39625972761364600C784C1 /* YemeklerCevap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YemeklerCevap.swift; sourceTree = "<group>"; };
 		D3C6CCDE2764DB0B0020AC7A /* YemekCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YemekCollectionViewCell.swift; sourceTree = "<group>"; };
 		D3C6CCE9276515040020AC7A /* DetayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetayVC.swift; sourceTree = "<group>"; };
+		D3E20E852767C1C000D7EC03 /* DetayProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetayProtocols.swift; sourceTree = "<group>"; };
+		D3E20E872767C6E900D7EC03 /* DetayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetayPresenter.swift; sourceTree = "<group>"; };
+		D3E20E892767C73500D7EC03 /* DetayInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetayInteractor.swift; sourceTree = "<group>"; };
+		D3E20E8B2767C74D00D7EC03 /* DetayRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetayRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +257,7 @@
 		D3C6CCE4276514D60020AC7A /* detay-module */ = {
 			isa = PBXGroup;
 			children = (
+				D3E20E842767C0C200D7EC03 /* protocols */,
 				D3C6CCE8276514ED0020AC7A /* router */,
 				D3C6CCE7276514E70020AC7A /* interactor */,
 				D3C6CCE6276514E10020AC7A /* presenter */,
@@ -268,6 +277,7 @@
 		D3C6CCE6276514E10020AC7A /* presenter */ = {
 			isa = PBXGroup;
 			children = (
+				D3E20E872767C6E900D7EC03 /* DetayPresenter.swift */,
 			);
 			path = presenter;
 			sourceTree = "<group>";
@@ -275,6 +285,7 @@
 		D3C6CCE7276514E70020AC7A /* interactor */ = {
 			isa = PBXGroup;
 			children = (
+				D3E20E892767C73500D7EC03 /* DetayInteractor.swift */,
 			);
 			path = interactor;
 			sourceTree = "<group>";
@@ -282,8 +293,17 @@
 		D3C6CCE8276514ED0020AC7A /* router */ = {
 			isa = PBXGroup;
 			children = (
+				D3E20E8B2767C74D00D7EC03 /* DetayRouter.swift */,
 			);
 			path = router;
+			sourceTree = "<group>";
+		};
+		D3E20E842767C0C200D7EC03 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D3E20E852767C1C000D7EC03 /* DetayProtocols.swift */,
+			);
+			path = protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,14 +449,18 @@
 				D3C6CCDF2764DB0B0020AC7A /* YemekCollectionViewCell.swift in Sources */,
 				D39625572761321300C784C1 /* AnaSayfaVC.swift in Sources */,
 				D39625532761321300C784C1 /* AppDelegate.swift in Sources */,
+				D3E20E8C2767C74D00D7EC03 /* DetayRouter.swift in Sources */,
+				D3E20E882767C6E900D7EC03 /* DetayPresenter.swift in Sources */,
 				D39625552761321300C784C1 /* SceneDelegate.swift in Sources */,
 				D39625932761344000C784C1 /* AnaSayfaProtocols.swift in Sources */,
 				D39625962761360C00C784C1 /* Yemek.swift in Sources */,
 				D309EA2E2763DDB800B9E944 /* IntroVC.swift in Sources */,
 				D309EA2A2763BE3C00B9E944 /* AnaSayfaRouter.swift in Sources */,
+				D3E20E8A2767C73500D7EC03 /* DetayInteractor.swift in Sources */,
 				D39625982761364600C784C1 /* YemeklerCevap.swift in Sources */,
 				D309EA282763BC6C00B9E944 /* AnaSayfaPresenter.swift in Sources */,
 				D309EA262763BB2000B9E944 /* AnaSayfaInteractor.swift in Sources */,
+				D3E20E862767C1C000D7EC03 /* DetayProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

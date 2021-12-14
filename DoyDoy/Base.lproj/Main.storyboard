@@ -80,7 +80,7 @@
             </objects>
             <point key="canvasLocation" x="788.40579710144937" y="53.571428571428569"/>
         </scene>
-        <!--DoyDoy Yemekler-->
+        <!--Yemekler-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="AnaSayfaVC" customModule="DoyDoy" customModuleProvider="target" sceneMemberID="viewController">
@@ -166,7 +166,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Euj-JW-BVE" secondAttribute="bottom" id="cnn-wo-mUn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="DoyDoy Yemekler" id="7TB-I7-cih"/>
+                    <navigationItem key="navigationItem" title="Yemekler" id="7TB-I7-cih">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="W8m-62-bes">
+                            <connections>
+                                <segue destination="39g-NH-xUf" kind="show" id="JHl-Gj-BMF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="yemeklerCV" destination="Euj-JW-BVE" id="c8j-5P-kFK"/>
                         <segue destination="Vxf-gr-Hpv" kind="showDetail" identifier="goToDetay" id="VFX-z2-Pqv"/>
@@ -175,6 +181,127 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1865.217391304348" y="53.571428571428569"/>
+        </scene>
+        <!--Sepet-->
+        <scene sceneID="6io-8X-b3l">
+            <objects>
+                <viewController id="39g-NH-xUf" customClass="SepetVC" customModule="DoyDoy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SIb-iD-NGS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="e64-eC-8Ae">
+                                <rect key="frame" x="0.0" y="88" width="414" height="708"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sepetYemekHucre" id="JXq-dQ-164" customClass="TableViewHucre" customModule="DoyDoy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JXq-dQ-164" id="qbG-Ef-1p6">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUl-HH-5AU">
+                                                    <rect key="frame" x="10" y="10" width="394" height="130"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qPi-Bg-grU">
+                                                            <rect key="frame" x="10" y="10" width="108" height="110"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="108" id="RrU-5K-RDG"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ayran" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBa-1u-Cq2">
+                                                            <rect key="frame" x="128" y="16" width="256" height="29"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 adet 6₺" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ST2-F5-Cae">
+                                                            <rect key="frame" x="128" y="61" width="256" height="24"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="ST2-F5-Cae" firstAttribute="top" secondItem="HBa-1u-Cq2" secondAttribute="bottom" constant="16" id="3DT-CB-vIM"/>
+                                                        <constraint firstItem="qPi-Bg-grU" firstAttribute="leading" secondItem="bUl-HH-5AU" secondAttribute="leading" constant="10" id="Ay3-Iw-pTw"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ST2-F5-Cae" secondAttribute="trailing" constant="10" id="Osb-df-5vT"/>
+                                                        <constraint firstItem="ST2-F5-Cae" firstAttribute="leading" secondItem="qPi-Bg-grU" secondAttribute="trailing" constant="10" id="RVH-3m-jPH"/>
+                                                        <constraint firstItem="HBa-1u-Cq2" firstAttribute="leading" secondItem="qPi-Bg-grU" secondAttribute="trailing" constant="10" id="V7q-tp-uHg"/>
+                                                        <constraint firstAttribute="trailing" secondItem="HBa-1u-Cq2" secondAttribute="trailing" constant="10" id="dfB-Mc-z1g"/>
+                                                        <constraint firstAttribute="bottom" secondItem="qPi-Bg-grU" secondAttribute="bottom" constant="10" id="jsX-BX-Bsw"/>
+                                                        <constraint firstItem="qPi-Bg-grU" firstAttribute="top" secondItem="bUl-HH-5AU" secondAttribute="top" constant="10" id="jyW-zT-fta"/>
+                                                        <constraint firstItem="HBa-1u-Cq2" firstAttribute="top" secondItem="bUl-HH-5AU" secondAttribute="top" constant="16" id="wXa-9D-eXn"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="bUl-HH-5AU" secondAttribute="bottom" constant="10" id="4ZC-Qb-G6m"/>
+                                                <constraint firstItem="bUl-HH-5AU" firstAttribute="leading" secondItem="qbG-Ef-1p6" secondAttribute="leading" constant="10" id="QTX-2a-OyM"/>
+                                                <constraint firstAttribute="trailing" secondItem="bUl-HH-5AU" secondAttribute="trailing" constant="10" id="ZrV-FS-3uD"/>
+                                                <constraint firstItem="bUl-HH-5AU" firstAttribute="centerX" secondItem="qbG-Ef-1p6" secondAttribute="centerX" id="f81-fw-sUm"/>
+                                                <constraint firstItem="bUl-HH-5AU" firstAttribute="centerY" secondItem="qbG-Ef-1p6" secondAttribute="centerY" id="f8S-vA-8SK"/>
+                                                <constraint firstItem="bUl-HH-5AU" firstAttribute="top" secondItem="qbG-Ef-1p6" secondAttribute="top" constant="10" id="orO-Yc-Xus"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="contentContainer" destination="bUl-HH-5AU" id="0DY-xM-CWS"/>
+                                            <outlet property="yemekAdiLabel" destination="HBa-1u-Cq2" id="pz6-gT-6tr"/>
+                                            <outlet property="yemekIV" destination="qPi-Bg-grU" id="PJl-H2-OSl"/>
+                                            <outlet property="yemekTutarLAbel" destination="ST2-F5-Cae" id="Mpk-Pf-Fvr"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0w-OO-qf0">
+                                <rect key="frame" x="0.0" y="796" width="414" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toplam Tutar:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2s-2N-5bS">
+                                        <rect key="frame" x="16" y="16" width="132.5" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₺0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2P-JI-VFX">
+                                        <rect key="frame" x="367" y="16" width="31" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                        <color key="textColor" red="0.08235294118" green="0.70196078429999997" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstItem="S2s-2N-5bS" firstAttribute="top" secondItem="B0w-OO-qf0" secondAttribute="top" constant="16" id="7t0-bd-wos"/>
+                                    <constraint firstAttribute="trailing" secondItem="P2P-JI-VFX" secondAttribute="trailing" constant="16" id="E4h-cu-OIL"/>
+                                    <constraint firstItem="S2s-2N-5bS" firstAttribute="leading" secondItem="B0w-OO-qf0" secondAttribute="leading" constant="16" id="Gba-nB-LYs"/>
+                                    <constraint firstAttribute="height" constant="100" id="TdQ-LB-5Lw"/>
+                                    <constraint firstItem="P2P-JI-VFX" firstAttribute="top" secondItem="B0w-OO-qf0" secondAttribute="top" constant="16" id="d8V-aw-wuQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sf1-vn-QYC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="B0w-OO-qf0" firstAttribute="top" secondItem="e64-eC-8Ae" secondAttribute="bottom" id="KqY-Xu-tcJ"/>
+                            <constraint firstItem="sf1-vn-QYC" firstAttribute="trailing" secondItem="B0w-OO-qf0" secondAttribute="trailing" id="KyK-lE-QLS"/>
+                            <constraint firstItem="sf1-vn-QYC" firstAttribute="trailing" secondItem="e64-eC-8Ae" secondAttribute="trailing" id="N1v-nO-isV"/>
+                            <constraint firstItem="e64-eC-8Ae" firstAttribute="top" secondItem="sf1-vn-QYC" secondAttribute="top" id="OLk-l7-bok"/>
+                            <constraint firstItem="B0w-OO-qf0" firstAttribute="leading" secondItem="sf1-vn-QYC" secondAttribute="leading" id="V2R-SH-7QZ"/>
+                            <constraint firstItem="e64-eC-8Ae" firstAttribute="leading" secondItem="sf1-vn-QYC" secondAttribute="leading" id="rVp-02-RBi"/>
+                            <constraint firstAttribute="bottom" secondItem="B0w-OO-qf0" secondAttribute="bottom" id="wMn-Uq-nWN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sepet" id="gCH-vA-sAa"/>
+                    <connections>
+                        <outlet property="sepetYemeklerTV" destination="e64-eC-8Ae" id="6sU-3p-VxU"/>
+                        <outlet property="toplamTutarLabel" destination="P2P-JI-VFX" id="vkt-wK-LAM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UAo-bE-NYB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2908.6956521739135" y="-352.23214285714283"/>
         </scene>
         <!--DetayVC-->
         <scene sceneID="BYd-dz-jdD">
@@ -268,7 +395,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iMi-0D-V4N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2834.7826086956525" y="53.571428571428569"/>
+            <point key="canvasLocation" x="2967" y="372"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2mL-bc-XCD">

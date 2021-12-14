@@ -40,10 +40,18 @@ class AnaSayfaVC: UIViewController {
 }
 
 extension AnaSayfaVC : PresenterToViewAnasayfaProtocol {
-    func vieweVeriGonder(yemeklerListesi: Array<Yemek>) {
-        self.yemekler = yemeklerListesi
-        DispatchQueue.main.async {
-            self.yemeklerCV.reloadData()
+    func vieweVeriGonder(yemeklerListesi: Array<Yemek>?) {
+        if let yemekler = yemeklerListesi {
+            self.yemekler = yemekler
+            DispatchQueue.main.async {
+                self.yemeklerCV.reloadData()
+            }
+        } else {
+            let alert = UIAlertController(title: "Hata", message: "Yemek listesi yüklenemedi! İnternet bağlantınızı kontrol ediniz.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: { (action: UIAlertAction!) in
+                self.navigationController?.popViewController(animated: true)
+            }))
+            self.present(alert, animated: true)
         }
     }
 }

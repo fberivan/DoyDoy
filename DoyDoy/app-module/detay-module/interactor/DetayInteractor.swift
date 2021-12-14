@@ -30,6 +30,8 @@ class DetayInteractor : PresenterToInteractorDetayProtocol{
                 } catch {
                     print(error.localizedDescription)
                 }
+            } else {
+                self.detayPresenter?.presenteraVeriGonder(basariliMi: false, hataMesaj: "Yemek sepete eklenemedi! İnternet bağlantınızı kontrol ediniz.")
             }
         }
     }

@@ -24,7 +24,10 @@ class AnaSayfaInteractor : PresenterToInteractorAnasayfaProtocol{
                     self.anasayfaPresenter?.presenteraVeriGonder(yemeklerListesi: liste)
                 } catch {
                     print(String(describing: error))
+                    self.anasayfaPresenter?.presenteraVeriGonder(yemeklerListesi: nil)
                 }
+            } else {
+                self.anasayfaPresenter?.presenteraVeriGonder(yemeklerListesi: nil)
             }
         }
     }

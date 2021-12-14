@@ -11,6 +11,14 @@
 		D309EA282763BC6C00B9E944 /* AnaSayfaPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D309EA272763BC6C00B9E944 /* AnaSayfaPresenter.swift */; };
 		D309EA2A2763BE3C00B9E944 /* AnaSayfaRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D309EA292763BE3C00B9E944 /* AnaSayfaRouter.swift */; };
 		D309EA2E2763DDB800B9E944 /* IntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D309EA2D2763DDB800B9E944 /* IntroVC.swift */; };
+		D38670C22769106F00E0AA85 /* SepetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38670C12769106F00E0AA85 /* SepetVC.swift */; };
+		D38670C8276910BC00E0AA85 /* SepetProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38670C7276910BC00E0AA85 /* SepetProtocols.swift */; };
+		D38670CA2769119500E0AA85 /* SepetYemek.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38670C92769119500E0AA85 /* SepetYemek.swift */; };
+		D38670CC2769121B00E0AA85 /* SepetYemeklerCevap.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38670CB2769121B00E0AA85 /* SepetYemeklerCevap.swift */; };
+		D38670CE2769131300E0AA85 /* SepetPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38670CD2769131300E0AA85 /* SepetPresenter.swift */; };
+		D38670D02769144700E0AA85 /* SepetInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38670CF2769144700E0AA85 /* SepetInteractor.swift */; };
+		D38670D22769149700E0AA85 /* SepetRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38670D12769149700E0AA85 /* SepetRouter.swift */; };
+		D38670D527691D6D00E0AA85 /* TableViewHucre.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38670D427691D6D00E0AA85 /* TableViewHucre.swift */; };
 		D39625532761321300C784C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39625522761321300C784C1 /* AppDelegate.swift */; };
 		D39625552761321300C784C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39625542761321300C784C1 /* SceneDelegate.swift */; };
 		D39625572761321300C784C1 /* AnaSayfaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39625562761321300C784C1 /* AnaSayfaVC.swift */; };
@@ -55,6 +63,14 @@
 		D309EA272763BC6C00B9E944 /* AnaSayfaPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnaSayfaPresenter.swift; sourceTree = "<group>"; };
 		D309EA292763BE3C00B9E944 /* AnaSayfaRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnaSayfaRouter.swift; sourceTree = "<group>"; };
 		D309EA2D2763DDB800B9E944 /* IntroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroVC.swift; sourceTree = "<group>"; };
+		D38670C12769106F00E0AA85 /* SepetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepetVC.swift; sourceTree = "<group>"; };
+		D38670C7276910BC00E0AA85 /* SepetProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepetProtocols.swift; sourceTree = "<group>"; };
+		D38670C92769119500E0AA85 /* SepetYemek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepetYemek.swift; sourceTree = "<group>"; };
+		D38670CB2769121B00E0AA85 /* SepetYemeklerCevap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepetYemeklerCevap.swift; sourceTree = "<group>"; };
+		D38670CD2769131300E0AA85 /* SepetPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepetPresenter.swift; sourceTree = "<group>"; };
+		D38670CF2769144700E0AA85 /* SepetInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepetInteractor.swift; sourceTree = "<group>"; };
+		D38670D12769149700E0AA85 /* SepetRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepetRouter.swift; sourceTree = "<group>"; };
+		D38670D427691D6D00E0AA85 /* TableViewHucre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHucre.swift; sourceTree = "<group>"; };
 		D396254F2761321300C784C1 /* DoyDoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoyDoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D39625522761321300C784C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D39625542761321300C784C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +138,67 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		D38670BF2769105800E0AA85 /* sepet-module */ = {
+			isa = PBXGroup;
+			children = (
+				D38670D327691D4F00E0AA85 /* tableview */,
+				D38670C62769109E00E0AA85 /* protocols */,
+				D38670C52769109300E0AA85 /* router */,
+				D38670C42769108D00E0AA85 /* interactor */,
+				D38670C32769108500E0AA85 /* presenter */,
+				D38670C02769106100E0AA85 /* view */,
+			);
+			path = "sepet-module";
+			sourceTree = "<group>";
+		};
+		D38670C02769106100E0AA85 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D38670C12769106F00E0AA85 /* SepetVC.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		D38670C32769108500E0AA85 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D38670CD2769131300E0AA85 /* SepetPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		D38670C42769108D00E0AA85 /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D38670CF2769144700E0AA85 /* SepetInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		D38670C52769109300E0AA85 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				D38670D12769149700E0AA85 /* SepetRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		D38670C62769109E00E0AA85 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D38670C7276910BC00E0AA85 /* SepetProtocols.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		D38670D327691D4F00E0AA85 /* tableview */ = {
+			isa = PBXGroup;
+			children = (
+				D38670D427691D6D00E0AA85 /* TableViewHucre.swift */,
+			);
+			path = tableview;
+			sourceTree = "<group>";
+		};
 		D39625462761321300C784C1 = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +253,7 @@
 		D3962588276132D700C784C1 /* app-module */ = {
 			isa = PBXGroup;
 			children = (
+				D38670BF2769105800E0AA85 /* sepet-module */,
 				D3C6CCE4276514D60020AC7A /* detay-module */,
 				D309EA2B2763DD5A00B9E944 /* intro-module */,
 				D3962594276135DB00C784C1 /* entity */,
@@ -242,6 +320,8 @@
 			children = (
 				D39625952761360C00C784C1 /* Yemek.swift */,
 				D39625972761364600C784C1 /* YemeklerCevap.swift */,
+				D38670C92769119500E0AA85 /* SepetYemek.swift */,
+				D38670CB2769121B00E0AA85 /* SepetYemeklerCevap.swift */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -446,21 +526,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3C6CCEA276515040020AC7A /* DetayVC.swift in Sources */,
+				D38670D527691D6D00E0AA85 /* TableViewHucre.swift in Sources */,
 				D3C6CCDF2764DB0B0020AC7A /* YemekCollectionViewCell.swift in Sources */,
+				D38670D02769144700E0AA85 /* SepetInteractor.swift in Sources */,
 				D39625572761321300C784C1 /* AnaSayfaVC.swift in Sources */,
+				D38670D22769149700E0AA85 /* SepetRouter.swift in Sources */,
+				D38670CC2769121B00E0AA85 /* SepetYemeklerCevap.swift in Sources */,
 				D39625532761321300C784C1 /* AppDelegate.swift in Sources */,
 				D3E20E8C2767C74D00D7EC03 /* DetayRouter.swift in Sources */,
+				D38670C8276910BC00E0AA85 /* SepetProtocols.swift in Sources */,
 				D3E20E882767C6E900D7EC03 /* DetayPresenter.swift in Sources */,
 				D39625552761321300C784C1 /* SceneDelegate.swift in Sources */,
 				D39625932761344000C784C1 /* AnaSayfaProtocols.swift in Sources */,
 				D39625962761360C00C784C1 /* Yemek.swift in Sources */,
 				D309EA2E2763DDB800B9E944 /* IntroVC.swift in Sources */,
+				D38670CA2769119500E0AA85 /* SepetYemek.swift in Sources */,
 				D309EA2A2763BE3C00B9E944 /* AnaSayfaRouter.swift in Sources */,
 				D3E20E8A2767C73500D7EC03 /* DetayInteractor.swift in Sources */,
 				D39625982761364600C784C1 /* YemeklerCevap.swift in Sources */,
 				D309EA282763BC6C00B9E944 /* AnaSayfaPresenter.swift in Sources */,
 				D309EA262763BB2000B9E944 /* AnaSayfaInteractor.swift in Sources */,
+				D38670C22769106F00E0AA85 /* SepetVC.swift in Sources */,
 				D3E20E862767C1C000D7EC03 /* DetayProtocols.swift in Sources */,
+				D38670CE2769131300E0AA85 /* SepetPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

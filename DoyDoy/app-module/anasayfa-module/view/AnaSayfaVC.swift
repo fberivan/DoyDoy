@@ -11,14 +11,17 @@ class AnaSayfaVC: UIViewController {
     
     var anasayfaPresenterNesnesi:ViewToPresenterAnasayfaProtocol?
     @IBOutlet weak var yemeklerCV: UICollectionView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var yemekler = [Yemek]()
+    var filteredYemekler = [Yemek]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         AnaSayfaRouter.createModule(ref: self)
         
+        searchBar.delegate = self
         yemeklerCV.delegate = self
         yemeklerCV.dataSource = self
         
@@ -39,10 +42,26 @@ class AnaSayfaVC: UIViewController {
 
 }
 
+extension AnaSayfaVC : UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.filteredYemekler = self.yemekler.filter { yemek in
+            if yemek.yemek_adi!.lowercased().contains(searchText.lowercased()) {
+                return true
+            }
+            if searchText.isEmpty {
+                return true
+            }
+            return false
+        }
+        self.yemeklerCV.reloadData()
+    }
+}
+
 extension AnaSayfaVC : PresenterToViewAnasayfaProtocol {
     func vieweVeriGonder(yemeklerListesi: Array<Yemek>?) {
         if let yemekler = yemeklerListesi {
             self.yemekler = yemekler
+            self.filteredYemekler = yemekler
             DispatchQueue.main.async {
                 self.yemeklerCV.reloadData()
             }
@@ -58,11 +77,11 @@ extension AnaSayfaVC : PresenterToViewAnasayfaProtocol {
 
 extension AnaSayfaVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return yemekler.count
+        return filteredYemekler.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let yemek = yemekler[indexPath.row]
+        let yemek = filteredYemekler[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "yemekHucre", for: indexPath) as! YemekCollectionViewCell
         
         cell.setupViews()
@@ -77,7 +96,7 @@ extension AnaSayfaVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let yemek = yemekler[indexPath.row]
+        let yemek = filteredYemekler[indexPath.row]
         performSegue(withIdentifier: "goToDetay", sender: yemek)
     }
     

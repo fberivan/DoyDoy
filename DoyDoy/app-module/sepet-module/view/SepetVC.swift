@@ -21,10 +21,21 @@ class SepetVC: UIViewController {
         
         sepetYemeklerTV.delegate = self
         sepetYemeklerTV.dataSource = self
+        
+        sepetYemeklerTV.separatorColor = UIColor(white: 0, alpha: 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        presenterNesnesi?.sepetiYukle(kullanici_adi: "berivan")
+        presenterNesnesi?.sepetiYukle(kullanici_adi: getKullaniciAdi())
+    }
+    
+    func getKullaniciAdi() -> String {
+        var kullanici_adi = UserDefaults.standard.string(forKey: "kullanici_adi")
+        if kullanici_adi == nil {
+            UserDefaults.standard.set("berivan", forKey: "kullanici_adi")
+            kullanici_adi = "berivan"
+        }
+        return kullanici_adi!
     }
 }
 
@@ -43,7 +54,7 @@ extension SepetVC : PresenterToViewSepetProtocol {
             if self.sepetYemekler.count == 0 {
                 let alert = UIAlertController(title: "Uyarı", message: "Sepetin şu an boş görünüyor.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Yemekleri Listele", style: .default, handler: { (action: UIAlertAction!) in
-                    self.navigationController?.popViewController(animated: true)
+                    self.tabBarController?.selectedIndex = 0
                 }))
                 self.present(alert, animated: true)
             }
@@ -66,6 +77,7 @@ extension SepetVC : UITableViewDelegate, UITableViewDataSource {
         let sepetYemek = sepetYemekler[indexPath.row]
         let hucre = tableView.dequeueReusableCell(withIdentifier: "sepetYemekHucre", for: indexPath) as! TableViewHucre
         
+        hucre.selectionStyle = .none
         hucre.setupViews()
         hucre.yemekAdiLabel.text = sepetYemek.yemek_adi!
         hucre.yemekTutarLAbel.text = "\(sepetYemek.yemek_siparis_adet!) adet ₺\(Int(sepetYemek.yemek_siparis_adet!)! * (Int(sepetYemek.yemek_fiyat!)!))"
@@ -79,7 +91,7 @@ extension SepetVC : UITableViewDelegate, UITableViewDataSource {
         let silAction = UIContextualAction(style: .destructive, title: "Sil"){ (contextualAction,view,bool) in
             
             let sepetYemek = self.sepetYemekler[indexPath.row]
-            self.presenterNesnesi?.sepetYemekSil(sepet_yemek_id: sepetYemek.sepet_yemek_id!, kullanici_adi: "berivan")
+            self.presenterNesnesi?.sepetYemekSil(sepet_yemek_id: sepetYemek.sepet_yemek_id!, kullanici_adi: self.getKullaniciAdi())
         }
         
         return UISwipeActionsConfiguration(actions: [silAction])

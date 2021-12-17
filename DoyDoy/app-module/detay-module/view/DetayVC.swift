@@ -37,7 +37,7 @@ class DetayVC: UIViewController {
 
     @IBAction func sepeteEkle(_ sender: UIButton) {
         if let y = yemek {
-            detayPresenterNesnesi?.sepeteEkle(yemek_adi: y.yemek_adi!, yemek_resim_adi: y.yemek_resim_adi!, yemek_fiyat: Int(y.yemek_fiyat!)!, yemek_siparis_adet: yemekAdet, kullanici_adi: "berivan")
+            detayPresenterNesnesi?.sepeteEkle(yemek_adi: y.yemek_adi!, yemek_resim_adi: y.yemek_resim_adi!, yemek_fiyat: Int(y.yemek_fiyat!)!, yemek_siparis_adet: yemekAdet, kullanici_adi: getKullaniciAdi())
         }
     }
     
@@ -59,6 +59,15 @@ class DetayVC: UIViewController {
                 self.yemekResimIV.kf.setImage(with: url)
             }
         }
+    }
+    
+    func getKullaniciAdi() -> String {
+        var kullanici_adi = UserDefaults.standard.string(forKey: "kullanici_adi")
+        if kullanici_adi == nil {
+            UserDefaults.standard.set("berivan", forKey: "kullanici_adi")
+            kullanici_adi = "berivan"
+        }
+        return kullanici_adi!
     }
 }
 

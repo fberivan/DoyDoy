@@ -35,6 +35,9 @@
 		D39625982761364600C784C1 /* YemeklerCevap.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39625972761364600C784C1 /* YemeklerCevap.swift */; };
 		D3C6CCDF2764DB0B0020AC7A /* YemekCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6CCDE2764DB0B0020AC7A /* YemekCollectionViewCell.swift */; };
 		D3C6CCEA276515040020AC7A /* DetayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6CCE9276515040020AC7A /* DetayVC.swift */; };
+		D3D53EC8276D22A200B00D13 /* KullaniciVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D53EC7276D22A200B00D13 /* KullaniciVC.swift */; };
+		D3D53ECC276D23F300B00D13 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D53ECB276D23F300B00D13 /* UIImage+Gif.swift */; };
+		D3D53ECE276D264400B00D13 /* profile.gif in Resources */ = {isa = PBXBuildFile; fileRef = D3D53ECD276D264400B00D13 /* profile.gif */; };
 		D3E20E862767C1C000D7EC03 /* DetayProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E20E852767C1C000D7EC03 /* DetayProtocols.swift */; };
 		D3E20E882767C6E900D7EC03 /* DetayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E20E872767C6E900D7EC03 /* DetayPresenter.swift */; };
 		D3E20E8A2767C73500D7EC03 /* DetayInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E20E892767C73500D7EC03 /* DetayInteractor.swift */; };
@@ -89,6 +92,9 @@
 		D39625972761364600C784C1 /* YemeklerCevap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YemeklerCevap.swift; sourceTree = "<group>"; };
 		D3C6CCDE2764DB0B0020AC7A /* YemekCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YemekCollectionViewCell.swift; sourceTree = "<group>"; };
 		D3C6CCE9276515040020AC7A /* DetayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetayVC.swift; sourceTree = "<group>"; };
+		D3D53EC7276D22A200B00D13 /* KullaniciVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KullaniciVC.swift; sourceTree = "<group>"; };
+		D3D53ECB276D23F300B00D13 /* UIImage+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
+		D3D53ECD276D264400B00D13 /* profile.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = profile.gif; sourceTree = "<group>"; };
 		D3E20E852767C1C000D7EC03 /* DetayProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetayProtocols.swift; sourceTree = "<group>"; };
 		D3E20E872767C6E900D7EC03 /* DetayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetayPresenter.swift; sourceTree = "<group>"; };
 		D3E20E892767C73500D7EC03 /* DetayInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetayInteractor.swift; sourceTree = "<group>"; };
@@ -226,6 +232,7 @@
 				D39625522761321300C784C1 /* AppDelegate.swift */,
 				D39625542761321300C784C1 /* SceneDelegate.swift */,
 				D39625582761321300C784C1 /* Main.storyboard */,
+				D3D53ECD276D264400B00D13 /* profile.gif */,
 				D396255B2761321400C784C1 /* Assets.xcassets */,
 				D396255D2761321400C784C1 /* LaunchScreen.storyboard */,
 				D39625602761321400C784C1 /* Info.plist */,
@@ -253,11 +260,13 @@
 		D3962588276132D700C784C1 /* app-module */ = {
 			isa = PBXGroup;
 			children = (
+				D3D53EC6276D228500B00D13 /* kullanici-module */,
 				D38670BF2769105800E0AA85 /* sepet-module */,
 				D3C6CCE4276514D60020AC7A /* detay-module */,
 				D309EA2B2763DD5A00B9E944 /* intro-module */,
 				D3962594276135DB00C784C1 /* entity */,
 				D3962589276132E900C784C1 /* anasayfa-module */,
+				D3D53ECA276D23B500B00D13 /* utils */,
 			);
 			path = "app-module";
 			sourceTree = "<group>";
@@ -376,6 +385,30 @@
 				D3E20E8B2767C74D00D7EC03 /* DetayRouter.swift */,
 			);
 			path = router;
+			sourceTree = "<group>";
+		};
+		D3D53EC6276D228500B00D13 /* kullanici-module */ = {
+			isa = PBXGroup;
+			children = (
+				D3D53EC9276D22A800B00D13 /* view */,
+			);
+			path = "kullanici-module";
+			sourceTree = "<group>";
+		};
+		D3D53EC9276D22A800B00D13 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D3D53EC7276D22A200B00D13 /* KullaniciVC.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		D3D53ECA276D23B500B00D13 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				D3D53ECB276D23F300B00D13 /* UIImage+Gif.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 		D3E20E842767C0C200D7EC03 /* protocols */ = {
@@ -498,6 +531,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3D53ECE276D264400B00D13 /* profile.gif in Resources */,
 				D396255F2761321400C784C1 /* LaunchScreen.storyboard in Resources */,
 				D396255C2761321400C784C1 /* Assets.xcassets in Resources */,
 				D396255A2761321300C784C1 /* Main.storyboard in Resources */,
@@ -529,10 +563,12 @@
 				D38670D527691D6D00E0AA85 /* TableViewHucre.swift in Sources */,
 				D3C6CCDF2764DB0B0020AC7A /* YemekCollectionViewCell.swift in Sources */,
 				D38670D02769144700E0AA85 /* SepetInteractor.swift in Sources */,
+				D3D53EC8276D22A200B00D13 /* KullaniciVC.swift in Sources */,
 				D39625572761321300C784C1 /* AnaSayfaVC.swift in Sources */,
 				D38670D22769149700E0AA85 /* SepetRouter.swift in Sources */,
 				D38670CC2769121B00E0AA85 /* SepetYemeklerCevap.swift in Sources */,
 				D39625532761321300C784C1 /* AppDelegate.swift in Sources */,
+				D3D53ECC276D23F300B00D13 /* UIImage+Gif.swift in Sources */,
 				D3E20E8C2767C74D00D7EC03 /* DetayRouter.swift in Sources */,
 				D38670C8276910BC00E0AA85 /* SepetProtocols.swift in Sources */,
 				D3E20E882767C6E900D7EC03 /* DetayPresenter.swift in Sources */,

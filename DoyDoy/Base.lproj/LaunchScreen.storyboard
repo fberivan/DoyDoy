@@ -19,17 +19,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doy Doy!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xX-8i-Rob">
-                                <rect key="frame" x="114" y="415.5" width="186" height="65"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="50"/>
-                                <color key="textColor" red="0.94901960784313721" green="0.29803921568627451" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="kpL-Yp-EIv">
+                                <rect key="frame" x="16" y="110.5" width="382" height="675"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <constraints>
-                            <constraint firstItem="8xX-8i-Rob" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="f7o-HN-YGD"/>
-                            <constraint firstItem="8xX-8i-Rob" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="yni-nR-hG3"/>
+                            <constraint firstItem="kpL-Yp-EIv" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="16" id="Km5-jp-ibT"/>
+                            <constraint firstItem="kpL-Yp-EIv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="p96-9t-Nz1"/>
+                            <constraint firstAttribute="trailing" secondItem="kpL-Yp-EIv" secondAttribute="trailing" constant="16" id="vly-DP-8iZ"/>
+                            <constraint firstItem="kpL-Yp-EIv" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="yfC-YD-y14"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -40,5 +39,6 @@
     </scenes>
     <resources>
         <image name="bg1" width="1299" height="1920"/>
+        <image name="splash" width="900" height="675"/>
     </resources>
 </document>

@@ -88,9 +88,6 @@ extension AnaSayfaVC: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.resimGoster(resimAdi: yemek.yemek_resim_adi!)
         cell.yemekAdiLabel.text = yemek.yemek_adi!
         cell.yemekFiyatLabel.text = "₺\(yemek.yemek_fiyat!)"
-        /*cell.filmIV.image = UIImage(named: yemek.resim_ad!)
-        cell.baslikLabel.text = film.ad!
-        cell.fiyatLabel.text = "\(film.fiyat!) ₺"*/
         
         return cell
     }

@@ -37,7 +37,7 @@ class DetayVC: UIViewController {
 
     @IBAction func sepeteEkle(_ sender: UIButton) {
         if let y = yemek {
-            detayPresenterNesnesi?.sepeteEkle(yemek_adi: y.yemek_adi!, yemek_resim_adi: y.yemek_resim_adi!, yemek_fiyat: Int(y.yemek_fiyat!)!, yemek_siparis_adet: yemekAdet, kullanici_adi: getKullaniciAdi())
+            detayPresenterNesnesi?.sepeteEkle(yemek_adi: y.yemek_adi!, yemek_resim_adi: y.yemek_resim_adi!, yemek_fiyat: Int(y.yemek_fiyat!)!, yemek_siparis_adet: yemekAdet, kullanici_adi: appDelegate.getKullaniciAdi())
         }
     }
     
@@ -61,19 +61,14 @@ class DetayVC: UIViewController {
         }
     }
     
-    func getKullaniciAdi() -> String {
-        var kullanici_adi = UserDefaults.standard.string(forKey: "kullanici_adi")
-        if kullanici_adi == nil {
-            UserDefaults.standard.set("berivan", forKey: "kullanici_adi")
-            kullanici_adi = "berivan"
-        }
-        return kullanici_adi!
-    }
 }
 
 extension DetayVC : PresenterToViewDetayProtocol {
     func vieweVeriGonder(basariliMi: Bool, hataMesaj: String?) {
         if basariliMi {
+            if let count = Int(appDelegate.sepetTab?.badgeValue ?? "0") {
+                appDelegate.sepetTab?.badgeValue = String(count + 1)
+            }
             let alert = UIAlertController(title: "Başarılı", message: "Ürün başarılı bir şekilde sepete eklendi.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: { (action: UIAlertAction!) in
                 self.dismiss(animated: true, completion: nil)

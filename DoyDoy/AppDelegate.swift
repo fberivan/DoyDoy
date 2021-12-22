@@ -7,10 +7,21 @@
 
 import UIKit
 
+let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var sepetTab: UITabBarItem?
+    
+    func getKullaniciAdi() -> String {
+        var kullanici_adi = UserDefaults.standard.string(forKey: "kullanici_adi")
+        if kullanici_adi == nil {
+            UserDefaults.standard.set("berivan", forKey: "kullanici_adi")
+            kullanici_adi = "berivan"
+        }
+        return kullanici_adi!
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Thread.sleep(forTimeInterval: 1.5)

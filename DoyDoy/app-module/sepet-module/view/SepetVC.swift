@@ -26,16 +26,7 @@ class SepetVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        presenterNesnesi?.sepetiYukle(kullanici_adi: getKullaniciAdi())
-    }
-    
-    func getKullaniciAdi() -> String {
-        var kullanici_adi = UserDefaults.standard.string(forKey: "kullanici_adi")
-        if kullanici_adi == nil {
-            UserDefaults.standard.set("berivan", forKey: "kullanici_adi")
-            kullanici_adi = "berivan"
-        }
-        return kullanici_adi!
+        presenterNesnesi?.sepetiYukle(kullanici_adi: appDelegate.getKullaniciAdi())
     }
 }
 
@@ -46,6 +37,7 @@ extension SepetVC : PresenterToViewSepetProtocol {
             DispatchQueue.main.async {
                 self.sepetYemeklerTV.reloadData()
                 var toplamTutar = 0
+                appDelegate.sepetTab?.badgeValue = sepetYemekler.count == 0 ? nil : "\(sepetYemekler.count)"
                 for yemek in sepetYemekler {
                     toplamTutar += Int(yemek.yemek_siparis_adet!)! * Int(yemek.yemek_fiyat!)!
                 }
@@ -91,7 +83,7 @@ extension SepetVC : UITableViewDelegate, UITableViewDataSource {
         let silAction = UIContextualAction(style: .destructive, title: "Sil"){ (contextualAction,view,bool) in
             
             let sepetYemek = self.sepetYemekler[indexPath.row]
-            self.presenterNesnesi?.sepetYemekSil(sepet_yemek_id: sepetYemek.sepet_yemek_id!, kullanici_adi: self.getKullaniciAdi())
+            self.presenterNesnesi?.sepetYemekSil(sepet_yemek_id: sepetYemek.sepet_yemek_id!, kullanici_adi: appDelegate.getKullaniciAdi())
         }
         
         return UISwipeActionsConfiguration(actions: [silAction])

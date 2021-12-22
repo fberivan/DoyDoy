@@ -18,22 +18,13 @@ class KullaniciVC: UIViewController {
         
         imageView.loadGif(name: "profile")
         
-        kullaniciAdiLabel.text = "Merhaba, \(getKullaniciAdi())"
-        kullaniciAdiTF.text = getKullaniciAdi()
+        kullaniciAdiLabel.text = "Merhaba, \(appDelegate.getKullaniciAdi())"
+        kullaniciAdiTF.text = appDelegate.getKullaniciAdi()
         
-    }
-    
-    func getKullaniciAdi() -> String {
-        var kullanici_adi = UserDefaults.standard.string(forKey: "kullanici_adi")
-        if kullanici_adi == nil {
-            UserDefaults.standard.set("berivan", forKey: "kullanici_adi")
-            kullanici_adi = "berivan"
-        }
-        return kullanici_adi!
     }
 
     @IBAction func kaydet(_ sender: UIButton) {
         UserDefaults.standard.set(kullaniciAdiTF.text, forKey: "kullanici_adi")
-        kullaniciAdiLabel.text = "Merhaba, \(getKullaniciAdi())"
+        kullaniciAdiLabel.text = "Merhaba, \(appDelegate.getKullaniciAdi())"
     }
 }

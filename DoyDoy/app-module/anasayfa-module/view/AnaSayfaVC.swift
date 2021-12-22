@@ -19,7 +19,13 @@ class AnaSayfaVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let tabsItem = self.tabBarController?.tabBar.items {
+            appDelegate.sepetTab = tabsItem[1]
+        }
+        
         AnaSayfaRouter.createModule(ref: self)
+        
+        anasayfaPresenterNesnesi?.sepetYemeklerSayisiYukle(kullanici_adi: appDelegate.getKullaniciAdi())
         
         searchBar.delegate = self
         yemeklerCV.delegate = self
@@ -58,6 +64,10 @@ extension AnaSayfaVC : UISearchBarDelegate {
 }
 
 extension AnaSayfaVC : PresenterToViewAnasayfaProtocol {
+    func vieweVeriGonder(sepetYemeklerSayisi: Int) {
+        appDelegate.sepetTab?.badgeValue = sepetYemeklerSayisi == 0 ? nil : "\(sepetYemeklerSayisi)"
+    }
+    
     func vieweVeriGonder(yemeklerListesi: Array<Yemek>?) {
         if let yemekler = yemeklerListesi {
             self.yemekler = yemekler
